@@ -18,6 +18,8 @@ async function main() {
     country: string;
   }
   $("body > table > tbody > tr").each((i, e) => {
+    // Skipping the first row
+    if (i === 0) return true;
     // Need to reput everything again in the cheerio selector for it to work
     // Finding all tds of the first column
     const tds = $(e).find("td");
